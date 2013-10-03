@@ -19,7 +19,7 @@ For configuration see the `config.json`
 
 # Writing plugins
 
-Basic Structure:
+## Command plugins
 ```
 module.exports  = {
 
@@ -40,6 +40,11 @@ module.exports  = {
 ```
 
 Save this as eg. `hi.js` in the plugins folder. **Restart**
+
+## Special plugins
+
+If you omit the declartion of `decription` and `usage` your plugin will be tagged with plugin.command = false. Usefull if you
+don't need to registerCommand() and just want to listen to 'user_joined' etc. (See SayHelloOnJoined.js or SayHiToAll.js)
 
 # API
 
@@ -70,11 +75,39 @@ A `message` object looks like this:
   fromUser : {
     nickname : 'NameOfUser',
     twitter  : true|false,
-    avatar   : 'url to Avatar'
+    avatar   : 'url of avatar'
   },
 
   commands : ['Array', 'of', 'all', 'commands']
 }
 ```
+
+
+`client.on('user_joined' | 'user_left' | 'online_participants', function(data))`
+
+Register special events.
+
+`user_joined` will call the callback function with a user object like this:
+{
+  token    : 'tlkiousertoken',
+  nickname : 'NameOfUser',
+  twitter  : true|false,
+  avatar   : 'url of avatar'
+}
+
+`user_left` will only contain the token like this:
+{
+  token    : 'tlkiousertoken'
+}
+
+'online_participants' will call the callback function with an array of registered users and the count of guests. This event will only fire once  after the bot joined.
+[{
+  like the user object from user_joined
+}, ...]
+
+See `SayHellOnJoined.js` and `SayHiToAll.js` in `plugins`
+
+
+
 
 

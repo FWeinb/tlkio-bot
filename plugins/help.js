@@ -7,7 +7,9 @@ module.exports  = {
     var helpMessage = '';
 
     plugins.forEach(function(plugin){
-      helpMessage += '**'+plugin.usage.toLowerCase() + '** : ' + plugin.description + '  \n';
+      if (plugin.command){
+        helpMessage += '**'+plugin.usage.toLowerCase() + '** : ' + plugin.description + '  \n';
+      }
     });
 
 
