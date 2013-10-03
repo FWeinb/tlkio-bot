@@ -1,5 +1,5 @@
 {
-  "channel"  : "DefaultBotChannel",
+  "channel"  : "tlkiobot",
   "user" : {
     "nickname" : "Bot" ,
     "avatar"   : "http://dl.dropboxusercontent.com/u/5319/avatar-tlkio-bot/avatar.png"
