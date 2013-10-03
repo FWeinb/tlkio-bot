@@ -1,6 +1,6 @@
 module.exports  = {
 
-  description : "Set a reminder for a specific period of time (e.g 1h55m0s)",
+  description : "Set a reminder for a specific period of time (e.g 1h55m)",
   usage       : "remindMeIn hhmmss",
   activate    : true,
 
@@ -16,18 +16,34 @@ module.exports  = {
         return false;
       }
 
-      var arr = message.commands[0].split(/[hms]/),
-          time = 0;
-      for(var i=0; i<arr.length; i++){
-        if(i==0) time = time+arr[i]*3600000;
-        if(i==1) time = time+arr[i]*60000;
-        if(i==2) time = time+arr[i]*1000;
+      var time = ["","","",0];
+
+      if(message.commands[0].indexOf("h") != -1){
+        time[0] = message.commands[0].split("h")[0]*3600000;
       }
+      if(message.commands[0].indexOf("m") != -1){
+        if(message.commands[0].indexOf("h") != -1){
+          time[1] = message.commands[0].split(/[hm]/)[1]*60000;
+        }else{
+          time[1] = message.commands[0].split("m")[0]*60000;
+        }
+      }
+      if(message.commands[0].indexOf("s") != -1){
+        if(message.commands[0].indexOf("m") != -1){
+          time[0] = message.commands[0].split(/[ms]/)[1]*1000;
+        }else if(message.commands[0].indexOf("h") != -1){
+          time[0] = message.commands[0].split(/[hs]/)[1]*1000;
+        }else{
+          time[0] = message.commands[0].split("s")[0]*1000;
+        }
+      }
+
+      time[3] = time[0]+time[1]+time[2];
 
       client.say("Sure thing @"+message.fromUser.nickname+"! I'll remind you in "+message.commands[0]+"...");
       setTimeout(function(){
         client.say("Hey, @"+message.fromUser.nickname+"..? Remember that you asked me to remind you? Well, it's time.");
-      }, time);
+      }, time[3]);
     });
 
   }
