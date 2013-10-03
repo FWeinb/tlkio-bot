@@ -23,7 +23,7 @@ module.exports  = {
           weather.find({q: serachFor, cnt:1}, function(weatherData){
               if (weatherData.count > 0){
                 var list = weatherData.list[0];
-                client.say('It\'s '+list.main.temp+'°C in ['+serachFor + '](http://maps.google.com/maps?z=12&t=m&q=loc:'+list.coord.lon+'+-'+list.coord.lat+'); ' + list.weather[0].description);
+                client.say('It\'s '+list.main.temp+'°C in ['+serachFor + '](http://maps.google.com/maps?z=12&t=m&q=loc:'+list.coord.lat+'+'+list.coord.lon+'); ' + list.weather[0].description);
               }else{
                 client.say('Nothing found');
               }
