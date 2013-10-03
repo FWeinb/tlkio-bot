@@ -5,6 +5,7 @@ module.exports  = {
 
   description : 'Will show the current weather',
   usage       : 'weather %location%',
+  activate    : true,
 
   register : function(client, plugins){
     var that = this;
@@ -35,7 +36,6 @@ module.exports  = {
         client.say('The location must contain at least 3 chars');
       }
     });
-
 
   }
 

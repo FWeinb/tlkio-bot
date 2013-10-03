@@ -2,6 +2,7 @@ module.exports  = {
 
   description : 'To get this help message',
   usage       : 'help|?',
+  activate    : true,
 
   register : function(client, plugins){
     var helpMessage = '';
@@ -12,11 +13,9 @@ module.exports  = {
       }
     });
 
-
     client.registerCommand(['help', '?'], function(message){
       client.say(helpMessage);
     });
-
 
   }
 
