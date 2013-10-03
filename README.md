@@ -58,7 +58,7 @@ Will send a Message with the content 'String'
 `client.registerCommand(''|[], function(message){})`
 
 This function will take as the first argument either a String or an Array of Strings and as a second a callback.
-If a user writes @%nameOfTheBot% command it will trigger the callback.
+If a user writes `@%nameOfTheBot% %command%` it will trigger the registered command callback.
 
 A `message` object looks like this:
 ```
@@ -66,6 +66,7 @@ A `message` object looks like this:
   text : 'Pure Text',
   html : '<b>Pure</b> Text',
 
+  // User that wrote this
   fromUser : {
     nickname : 'NameOfUser',
     twitter  : true|false,
