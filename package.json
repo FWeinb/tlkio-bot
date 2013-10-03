@@ -1,0 +1,16 @@
+{
+  "name": "tlkio-bot",
+  "version": "0.0.1",
+  "description": "Just a little chat bot for tlk.io",
+  "main": "index.js",
+  "author": "Fabrice Weinberg",
+  "license": "MIT",
+  "devDependencies": {
+    "websocket": "~1.0.8",
+    "request": "~2.27.0",
+    "q": "~0.9.7",
+    "moment": "~2.2.1",
+    "weather": "~0.1.0",
+    "openweathermap": "0.0.3"
+  }
+}
