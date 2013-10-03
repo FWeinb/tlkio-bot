@@ -25,6 +25,7 @@ module.exports  = {
 
   description : 'Say Hi', // Just a short description
   usage       : 'hi',     // How to use this plugin
+  activate    : true,     // If plugin should be activated or not
 
   register : function(client, plugins){
 
