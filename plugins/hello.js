@@ -5,7 +5,7 @@ module.exports  = {
 
   register : function(client, plugins){
 
-    var phrases = [ 'Hi', 'Hai', 'Hi!', 'haj', 'Hey'];
+    var phrases = [ 'Hi', 'Hai', 'Hi!', 'Haj', 'Hey', "Hello", "Hellow", "Hallo!", "herrow"];
 
     function getRandomHi(){
       return phrases[Math.floor(Math.random()*phrases.length)];
