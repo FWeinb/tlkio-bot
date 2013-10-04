@@ -3,8 +3,9 @@ var weather = require('openweathermap');
 
 module.exports  = {
 
-  description : 'Will show the current weather',
+  description : 'Show current weather at any location',
   usage       : 'weather %location%',
+  activate    : true,
 
   register : function(client, plugins){
     var that = this;
@@ -35,7 +36,6 @@ module.exports  = {
         client.say('The location must contain at least 3 chars');
       }
     });
-
 
   }
 

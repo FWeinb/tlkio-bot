@@ -1,11 +1,11 @@
 module.exports  = {
 
   description : 'let me google for you',
-  usage       : 'google|g %query%',
+  usage       : '(google|g) %query%',
+  activate    : true,
 
   register : function(client, plugins){
     var that = this;
-
 
     client.registerCommand(['google', 'g'], function(message){
       if (message.commands.length === 0){
