@@ -4,7 +4,6 @@ module.exports  = {
 
   description : 'ask me who I am',
   usage       : 'info',
-  activate    : true,
 
   register : function(client, plugins){
 

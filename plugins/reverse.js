@@ -2,7 +2,7 @@ module.exports  = {
 
   description : 'Reverse a string',
   usage       : 'reverse %string%',
-  activate    : true,
+
 
   register : function(client, plugins){
 

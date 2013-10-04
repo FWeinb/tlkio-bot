@@ -2,7 +2,6 @@ module.exports  = {
 
   description : 'Let me say hi to you',
   usage       : 'Hi',
-  activate    : true,
 
   register : function(client, plugins){
 

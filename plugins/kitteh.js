@@ -4,7 +4,6 @@ module.exports  = {
 
   description : 'Recieve a random cat',
   usage       : 'kitteh',
-  activate    : true,
 
   register : function(client, plugins){
 

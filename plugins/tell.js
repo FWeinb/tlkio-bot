@@ -2,7 +2,6 @@ module.exports  = {
 
   description : 'Make me say something to a specific user',
   usage       : 'tell @user %string%',
-  activate    : true,
 
   register : function(client, plugins){
   	var that = this;

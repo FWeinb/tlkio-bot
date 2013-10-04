@@ -5,7 +5,6 @@ module.exports  = {
 
   description : 'Show current weather at any location',
   usage       : 'weather %location%',
-  activate    : true,
 
   register : function(client, plugins){
     var that = this;

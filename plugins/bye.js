@@ -2,7 +2,6 @@ module.exports  = {
 
   description : 'Never again leave without a friendly goodbye',
   usage       : 'Bye',
-  activate    : true,
 
   register : function(client, plugins){
 

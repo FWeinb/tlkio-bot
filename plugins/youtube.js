@@ -4,7 +4,6 @@ module.exports  = {
 
   description : 'Search on YouTube and get a random video',
   usage       : '(youtube|yt) %searchTerm%',
-  activate    : true,
 
   register : function(client, plugins){
     var that = this;
