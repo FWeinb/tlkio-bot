@@ -1,7 +1,7 @@
 module.exports  = {
 
   description : "Set a reminder for a specific period of time (e.g 1h55m)",
-  usage       : "remindMeIn hhmmss",
+  usage       : "remindMeIn %hhmmss%",
   activate    : true,
 
   register : function(client, plugins){

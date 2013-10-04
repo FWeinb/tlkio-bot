@@ -3,7 +3,7 @@ var request = require('request');
 module.exports  = {
 
   description : 'Search on YouTube and get a random video',
-  usage       : 'youtube|yt %searchTerm%',
+  usage       : '(youtube|yt) %searchTerm%',
   activate    : true,
 
   register : function(client, plugins){

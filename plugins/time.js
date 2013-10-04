@@ -8,7 +8,7 @@ module.exports  = {
 
   register : function(client, plugins){
     client.registerCommand('time', function(data){
-      client.say('It is ' + moment().format('h:mm')+'h');
+      client.say('It is ' + moment.utc().format('h:mm')+'h (utc)');
     });
   }
 

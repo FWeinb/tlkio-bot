@@ -3,7 +3,7 @@ var weather = require('openweathermap');
 
 module.exports  = {
 
-  description : 'Will show the current weather',
+  description : 'Show current weather at any location',
   usage       : 'weather %location%',
   activate    : true,
 

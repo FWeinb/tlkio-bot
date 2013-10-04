@@ -1,7 +1,7 @@
 module.exports  = {
 
   description : 'let me google for you',
-  usage       : 'google|g %query%',
+  usage       : '(google|g) %query%',
   activate    : true,
 
   register : function(client, plugins){

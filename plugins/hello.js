@@ -1,6 +1,6 @@
 module.exports  = {
 
-  description : 'let me say hi to you',
+  description : 'Let me say hi to you',
   usage       : 'Hi',
   activate    : true,
 
