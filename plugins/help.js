@@ -28,7 +28,7 @@ module.exports  = {
             return;
           }
         });
-        if(msg){ client.say(msg) }else{ client.say("Plugin **"+message.commands[0]+"**.js could not be found; it might not be activated yet?") }
+        if(msg){ client.say(msg) }else{ client.say("Plugin **"+message.commands[0]+"**.js could not be found.") }
       }
 
     });
