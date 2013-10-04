@@ -7,7 +7,7 @@ module.exports  = {
   register : function(client, plugins){
 
     client.registerCommand("reverse", function(message){
-      client.say(message.commands[0].split("").reverse().join(""));
+      client.say(message.commands.join("").split("").reverse().join(""));
     });
 
   }
