@@ -1,5 +1,6 @@
 {
   "name": "tlkio-bot",
+  "alias": "@Bot",
   "version": "0.0.1",
   "description": "Just a little chat bot for tlk.io",
   "main": "index.js",
