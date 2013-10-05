@@ -39,9 +39,9 @@ module.exports  = {
 
       time[3] = time[0]+time[1]+time[2];
 
-      client.say("Sure thing @"+message.fromUser.nickname+"! I'll remind you in "+message.commands[0]+"...");
+      client.say("Sure thing @"+message.fromUser.name+"! I'll remind you in "+message.commands[0]+"...");
       setTimeout(function(){
-        client.say("Hey, @"+message.fromUser.nickname+"..? Remember that you asked me to remind you? Well, it's time.");
+        client.say("Hey, @"+message.fromUser.name+"..? Remember that you asked me to remind you? Well, it's time.");
       }, time[3]);
     });
 

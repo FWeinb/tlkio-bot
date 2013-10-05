@@ -9,7 +9,8 @@ module.exports  = {
         message += ' @'+user.name;
       }
       if (guests_count > 0){
-        message += ' and ' + guests_count + ' guest';
+        var and = users.length === 0 ? '' : ' and ';
+        message += and + guests_count + ' guest(s)';
       }
 
       client.say(message);
