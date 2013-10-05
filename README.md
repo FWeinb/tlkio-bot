@@ -1,12 +1,13 @@
 tlkio-bot
 =====
+Just a small little chatbot.
 
-Just a quick and dirty little tlkio-bot with a simple plugin mechanisim.
+All things connection related is in [tlkio-client](https://github.com/FWeinb/tlkio-client) if you want a little bit more have a look at GitHub's [hubot](https://github.com/github/hubot) in combination with my [hubot-tlkio](https://github.com/FWeinb/hubot-tlkio) adapter.
+
 
 # Live Demo
 
 tlk.io channel: [tlkiobot](http://tlk.io/tlkiobot)
-
 
 # Getting started
 
@@ -16,7 +17,6 @@ tlk.io channel: [tlkiobot](http://tlk.io/tlkiobot)
 
 For configuration see the `config.json`
 
-
 # Writing plugins
 
 ## Command plugins
@@ -25,14 +25,14 @@ module.exports  = {
 
   description : 'Say Hi', // Just a short description
   usage       : 'hi',     // How to use this plugin
-  activate    : true,     // If plugin should be activated or not
+  activate    : false,     // If plugin should be activated or not alway true if ommited
 
   register : function(client, plugins){
 
     // Register a command
     client.registerCommand('hi', function(message){
       // Reply
-      client.say('@'+message.fromUser.nickname+' Hi');
+      client.say('@'+message.fromUser.name+' Hi');
     });
 
   }
@@ -69,17 +69,21 @@ If a user writes `@%nameOfTheBot% %command%` it will trigger the registered comm
 the callback will be called with a `message` object which looks like this:
 ```
 {
+  id   : 'messgaeid',
   text : 'Pure Text',
   html : '<b>Pure</b> Text',
 
   // User that wrote this
   fromUser : {
-    nickname : 'NameOfUser',
-    twitter  : true|false,
-    avatar   : 'url of avatar'
+    id  : 'ID',
+    name : 'NameOfUser',
+    details : {
+      twitter  : true|false,
+      avatar   : 'url of avatar'
+    }
   },
 
-  commands : ['Array', 'of', 'all', 'commands']
+  commands : ['array', 'of', 'all', 'commands'] // All lowercase
 }
 ```
 
@@ -89,23 +93,30 @@ Register special events.
 
 `user_joined` will call the callback function with a user object like this:
 ```{
-  token    : 'tlkiousertoken',
-  nickname : 'NameOfUser',
-  twitter  : true|false,
-  avatar   : 'url of avatar'
+  id    : 'userid',
+  name  : 'NameOfUser',
+  details : {
+    twitter  : true|false,
+    avatar   : 'url of avatar'
+  }
 }
 ```
 `user_left` will only contain the token like this:
 ```
 {
-  token    : 'tlkiousertoken'
+  id    : 'userid'
 }
 ```
 
-'online_participants' will call the callback function with an array of registered users and the count of guests. This event will only fire once  after the bot joined.
+'online_participants' will call the callback function with an array of registered users and the count of guests. This event will only fire once after the bot joined.
 ```
 [{
-  like the user object from user_joined
+  id    : 'userid',
+  name  : 'NameOfUser',
+  details : {
+    twitter  : true|false,
+    avatar   : 'url of avatar'
+  }
 }, ...]
 ```
 

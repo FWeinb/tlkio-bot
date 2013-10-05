@@ -8,7 +8,7 @@ module.exports  = {
     var phrases = ['Bye', 'Cu', 'Cya', 'Goodbye', 'G\'night', 'See you', 'Night', 'Later!'];
 
     client.registerCommand(phrases, function(message){
-      client.say("@"+message.fromUser.nickname+" "+phrases[Math.floor(Math.random()*phrases.length)]);
+      client.say("@"+message.fromUser.name+" "+phrases[Math.floor(Math.random()*phrases.length)]);
     });
 
   }

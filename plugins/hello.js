@@ -16,7 +16,7 @@ module.exports  = {
     }
 
     client.registerCommand(phrases, function(message){
-      sendHi(message.fromUser.nickname);
+      sendHi(message.fromUser.name);
     });
 
   }

@@ -7,11 +7,14 @@
   "author": "Fabrice Weinberg",
   "license": "MIT",
   "devDependencies": {
-    "websocket": "~1.0.8",
-    "request": "~2.27.0",
-    "q": "~0.9.7",
+    "tlkio-client": "~0.0.3",
     "moment": "~2.2.1",
     "weather": "~0.1.0",
     "openweathermap": "0.0.3"
+  },
+  "dependencies": {
+    "coffee-script": "~1.6.3",
+    "tlkio-client": "0.0.3",
+    "request": "~2.27.0"
   }
 }

@@ -19,7 +19,6 @@ module.exports  = {
       }else{
         plugins.forEach(function(plugin){
           if (plugin.name.toLowerCase().indexOf(message.commands[0].toLowerCase()) === 0){
-            console.log(plugin);
             if(plugin.activate){
               msg += "How to **" + message.commands[0] + "**, you say?  \n";
               msg += "Well, it's quite easy to **" + plugin.description.toLowerCase() + "** actually! ";

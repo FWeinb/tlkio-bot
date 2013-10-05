@@ -4,12 +4,12 @@ module.exports  = {
   usage       : 'tell @user %string%',
 
   register : function(client, plugins){
-  	var that = this;
+    var that = this;
 
     client.registerCommand("tell", function(message){
 
       if(message.commands.length <= 1){
-      	client.say('Usage: '+that.usage);
+        client.say('Usage: '+that.usage);
         return;
       }
 
